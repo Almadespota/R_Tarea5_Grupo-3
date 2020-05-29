@@ -1,0 +1,100 @@
+---
+title: "ReporteClase5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+
+dataset1 <- data.frame(x=c(10, 8, 13, 9, 11, 14, 6, 4, 12, 7, 5),
+                      y=c(8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68))
+
+dataset2 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+                     y=c(9.14,8.14,8.74,8.77,9.26,8.1,6.13,3.1,9.13,7.26,4.47)
+                )
+
+dataset3 <- data.frame(x=c(10,8,13,9,11,14,6,4,12,7,5),
+                     y=c(7.51,6.77,12.74,7.11,7.81,8.84,6.08,5.39,8.15,6.42,5.73)
+                )
+
+dataset4 <- data.frame(x=c(8,8,8,8,8,8,8,19,8,8,8),
+                     y=c(6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.5,5.56,7.91,6.89)
+                     )
+dataset1
+dataset2
+dataset3
+dataset4
+
+```
+
+```{r}
+
+mean1x <- mean(dataset1$x)
+mean1y <-mean(dataset1$y)
+sd1x <- sd(dataset1$x)
+sd1y <- sd(dataset1$y)
+cor1 <- cor(dataset1)
+
+#**********************
+
+mean2x <-mean(dataset2$x)
+mean2y <-mean(dataset2$y)
+sd2x <-sd(dataset2$x)
+sd2y <-sd(dataset2$y)
+cor2 <- cor(dataset2)
+
+#*********************
+
+mean3x <-mean(dataset3$x)
+mean3y <-mean(dataset3$y)
+sd3x <-sd(dataset3$x)
+sd3y <-sd(dataset3$y)
+cor3 <-cor(dataset3)
+
+#********************
+
+mean4x <-mean(dataset4$x)
+mean4y <-mean(dataset4$y)
+sd4x <-sd(dataset4$x)
+sd4y <-sd(dataset4$y)
+cor4<-cor(dataset4)
+
+lista1 <- c(mean1x,mean1y,sd1x,sd1y)
+lista2 <- c(mean2x,mean2y,sd2x,sd2y)
+lista3 <- c(mean3x,mean3y,sd3x,sd3y)
+lista4 <- c(mean4x,mean4y,sd4x,sd4y)
+
+
+names(lista1) <- c("Media1X","Media1Y","sd1X","sd1Y")
+names(lista2) <- c("Media2X","Media2Y","sd2X","sd2Y")
+names(lista3) <- c("Media3X","Media3Y","sd3X","sd3Y")
+names(lista4) <- c("Media4X","Media4Y","sd4X","sd4Y")
+
+lista1
+lista2
+lista3
+lista4
+
+cor1
+cor2
+cor3
+cor4
+
+```
+```{r}
+
+plot(x=dataset1$x,y=dataset1$y)
+plot(x=dataset2$x,y=dataset2$y)
+plot(x=dataset3$x,y=dataset3$y)
+plot(x=dataset4$x,y=dataset4$y)
+
+```
+
+
+De la comparación de los 4 datasets se puede ver que a pesar de que los valores de cada uno son diferentes, arrojan resultados muy similares en la media, la desviación estándar y la correlación de las variables. Además, los 4 gráficos son muy distintos entre ellos (dado la distribución de los datos). 
+
